@@ -195,6 +195,37 @@
     .audio-bars { display: flex; align-items: center; gap: 2px; flex: 1; }
     .audio-bar { width: 2px; border-radius: 2px; background: var(--purple-bright); }
 
+    /* ---- WhatsApp Mockup ---- */
+    .wa-mock { background:#efeae2;padding:0;overflow:hidden;position:relative;width:280px;border-radius:12px;box-shadow:0 4px 20px rgba(69,69,196,0.08); }
+    .wa-mock * { box-sizing:border-box; }
+    .wa-body { padding:12px 8px;display:flex;flex-direction:column;gap:5px;background:#efeae2;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect width='300' height='300' fill='%23efeae2'/%3E%3Cg opacity='0.06'%3E%3Ccircle cx='25' cy='25' r='3' fill='%23000'/%3E%3Ccircle cx='75' cy='50' r='2' fill='%23000'/%3E%3Ccircle cx='150' cy='30' r='2.5' fill='%23000'/%3E%3Ccircle cx='50' cy='100' r='2' fill='%23000'/%3E%3Ccircle cx='120' cy='80' r='3' fill='%23000'/%3E%3Ccircle cx='200' cy='60' r='2' fill='%23000'/%3E%3Ccircle cx='250' cy='90' r='2.5' fill='%23000'/%3E%3Ccircle cx='30' cy='160' r='2' fill='%23000'/%3E%3Ccircle cx='100' cy='140' r='3' fill='%23000'/%3E%3Ccircle cx='180' cy='150' r='2' fill='%23000'/%3E%3Ccircle cx='270' cy='130' r='2.5' fill='%23000'/%3E%3Ccircle cx='60' cy='220' r='3' fill='%23000'/%3E%3Ccircle cx='140' cy='200' r='2' fill='%23000'/%3E%3Ccircle cx='220' cy='210' r='2.5' fill='%23000'/%3E%3Ccircle cx='80' cy='270' r='2' fill='%23000'/%3E%3Ccircle cx='190' cy='260' r='3' fill='%23000'/%3E%3Ccircle cx='260' cy='240' r='2' fill='%23000'/%3E%3C/g%3E%3C/svg%3E"); }
+    .wa-msg { padding:6px 7px 4px;max-width:85%;position:relative;box-shadow:0 1px 0.5px rgba(0,0,0,0.13); }
+    .wa-msg.incoming { background:#fff;border-radius:0 7px 7px 7px;align-self:flex-start; }
+    .wa-msg.outgoing { background:#d9fdd3;border-radius:7px 0 7px 7px;align-self:flex-end; }
+    .wa-msg .wa-text { font-size:10px;color:#111b21;line-height:1.5; }
+    .wa-msg .wa-text strong { font-weight:600; }
+    .wa-msg .wa-text em { font-style:italic; }
+    .wa-msg .wa-meta { display:flex;align-items:center;justify-content:flex-end;gap:3px;margin-top:1px; }
+    .wa-msg .wa-time { font-size:7px;color:#667781; }
+    .wa-msg .wa-check { color:#53bdeb;font-size:7px;letter-spacing:-2px; }
+    /* Audio message - WhatsApp style */
+    .wa-voice { display:flex;align-items:center;gap:6px;padding:2px 0; }
+    .wa-voice .wa-v-play { width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer; }
+    .wa-voice .wa-v-play.green { background:#00a884; }
+    .wa-voice .wa-v-play.gray { background:#8696a0; }
+    .wa-voice .wa-v-mid { flex:1;display:flex;flex-direction:column;gap:0;position:relative; }
+    .wa-voice .wa-v-bars { display:flex;align-items:center;gap:0;height:26px;padding:0; }
+    .wa-voice .wa-v-bars span { width:3px;min-width:3px;border-radius:3px;margin-right:1px; }
+    .wa-voice .wa-v-seek { height:4px;background:rgba(0,0,0,0.1);border-radius:2px;position:relative;margin-top:2px; }
+    .wa-voice .wa-v-seek .wa-v-fill { position:absolute;left:0;top:0;height:100%;border-radius:2px; }
+    .wa-voice .wa-v-seek .wa-v-dot { position:absolute;top:50%;transform:translateY(-50%);width:10px;height:10px;border-radius:50%;margin-left:-5px; }
+    .wa-voice .wa-v-avatar { width:30px;height:30px;border-radius:50%;overflow:hidden;flex-shrink:0;border:2px solid #fff;box-shadow:0 1px 2px rgba(0,0,0,0.1); }
+    .wa-voice .wa-v-avatar img { width:100%;height:100%;object-fit:cover; }
+    .wa-voice .wa-v-dur, .wa-msg .wa-v-dur { font-size:7px !important;color:#667781;min-width:16px;line-height:1; }
+    .wa-input { background:#f0f2f5;padding:6px 8px;display:flex;align-items:center;gap:6px; }
+    .wa-input .wa-inputbox { flex:1;background:#fff;border-radius:20px;padding:6px 12px;font-size:9px;color:#667781;border:none; }
+    .wa-input .wa-mic { width:28px;height:28px;border-radius:50%;background:#00a884;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
+
     /* ---- Mentor Section ---- */
     .mentor-section { padding: 100px 0 80px; background: var(--bg-gray); }
     .mentor-section .section-header h2 { font-family: var(--heading); font-weight: 800; font-style: italic; font-size: 42px; color: var(--purple); }
@@ -572,26 +603,38 @@
             <p>Todo dia você recebe uma microlição no seu WhatsApp. Áudio, imagem e contexto real. Você absorve inglês nos intervalos do seu dia, sem precisar abrir outro app.</p>
           </div>
           <div class="step-mockup">
-            <div class="phone-mockup">
-              <div class="phone-card" style="display:flex;align-items:center;gap:12px;padding:10px 14px;">
-                <div style="width:36px;height:36px;border-radius:50%;background:#5353ea;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="17" height="17" fill="none" viewBox="0 0 24 24"><path d="M3 3h18v14H7l-4 4V3z" stroke="#fff" stroke-width="2"/></svg></div>
-                <div style="flex:1"><div class="phone-card-title">Whatsapp</div><div class="phone-card-text">Seu inglês evolui direto do WhatsApp</div></div>
-                <div style="width:26px;height:26px;border:1px solid #5353ea;border-radius:50%;display:flex;align-items:center;justify-content:center"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H3M8 2V7" stroke="#5353ea" stroke-width="1.2"/></svg></div>
+            <div class="wa-mock">
+              <div class="wa-body">
+                <div class="wa-msg incoming">
+                  <div class="wa-text">Bom dia! &#9728;&#65039; Sua lição de hoje:</div>
+                  <div class="wa-text" style="margin-top:3px;"><strong>How to talk about your routine</strong></div>
+                  <div class="wa-text" style="margin-top:4px;color:#667781;">&#127911; Ouça o áudio e repita:</div>
+                  <div class="wa-meta"><span class="wa-time">09:00</span></div>
+                </div>
+                <div class="wa-msg incoming">
+                  <div class="wa-voice">
+                    <div class="wa-v-play green"><svg width="10" height="12" viewBox="0 0 10 12" fill="none"><path d="M1 1v10l8-5-8-5z" fill="#fff"/></svg></div>
+                    <div class="wa-v-mid">
+                      <div class="wa-v-bars"><span style="height:3px;background:#00a884"></span><span style="height:5px;background:#00a884"></span><span style="height:10px;background:#00a884"></span><span style="height:7px;background:#00a884"></span><span style="height:14px;background:#00a884"></span><span style="height:18px;background:#00a884"></span><span style="height:12px;background:#00a884"></span><span style="height:8px;background:#00a884"></span><span style="height:16px;background:#00a884"></span><span style="height:20px;background:#00a884"></span><span style="height:13px;background:#00a884"></span><span style="height:6px;background:#00a884"></span><span style="height:11px;background:#00a884"></span><span style="height:17px;background:#00a884"></span><span style="height:9px;background:#8696a0"></span><span style="height:4px;background:#8696a0"></span><span style="height:13px;background:#8696a0"></span><span style="height:19px;background:#8696a0"></span><span style="height:15px;background:#8696a0"></span><span style="height:8px;background:#8696a0"></span><span style="height:3px;background:#8696a0"></span><span style="height:11px;background:#8696a0"></span><span style="height:16px;background:#8696a0"></span><span style="height:21px;background:#8696a0"></span><span style="height:14px;background:#8696a0"></span><span style="height:7px;background:#8696a0"></span><span style="height:10px;background:#8696a0"></span><span style="height:18px;background:#8696a0"></span><span style="height:12px;background:#8696a0"></span><span style="height:5px;background:#8696a0"></span><span style="height:9px;background:#8696a0"></span><span style="height:15px;background:#8696a0"></span><span style="height:6px;background:#8696a0"></span><span style="height:3px;background:#8696a0"></span></div>
+                      <div class="wa-v-seek"><div class="wa-v-fill" style="width:40%;background:#00a884;"></div><div class="wa-v-dot" style="left:40%;background:#00a884;"></div></div>
+                    </div>
+                  </div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;"><span class="wa-v-dur">0:42</span><div class="wa-meta"><span class="wa-time">09:00</span></div></div>
+                </div>
+                <div class="wa-msg incoming">
+                  <div class="wa-text">&#128214; <em>"I usually wake up at 7 and have coffee before work."</em></div>
+                  <div class="wa-meta"><span class="wa-time">09:00</span></div>
+                </div>
+                <div class="wa-msg incoming">
+                  <div class="wa-text">Agora me conta: <strong>What does your morning look like?</strong> &#128172;</div>
+                  <div class="wa-meta"><span class="wa-time">09:01</span></div>
+                </div>
               </div>
-              <div class="phone-card" style="display:flex;align-items:center;gap:12px;padding:10px 14px;">
-                <div style="width:36px;height:36px;border-radius:50%;background:#f0e6ff;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="17" height="17" fill="none" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10" stroke="#5353ea" stroke-width="2" stroke-linecap="round"/></svg></div>
-                <div style="flex:1"><div class="phone-card-title">Trilhas</div><div class="phone-card-text">Aprenda praticando com desafios</div></div>
-                <div style="width:26px;height:26px;border:1px solid #5353ea;border-radius:50%;display:flex;align-items:center;justify-content:center"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H3M8 2V7" stroke="#5353ea" stroke-width="1.2"/></svg></div>
-              </div>
-              <div class="phone-card" style="display:flex;align-items:center;gap:12px;padding:10px 14px;">
-                <div style="width:36px;height:36px;border-radius:50%;background:#5353ea;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="17" height="17" fill="none" viewBox="0 0 24 24"><path d="M12 12c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm0 2c-2.7 0-8 1.3-8 4v2h16v-2c0-2.7-5.3-4-8-4z" fill="#fff"/></svg></div>
-                <div style="flex:1"><div class="phone-card-title">Aula individual</div><div class="phone-card-text">Agende sua aula particular mensal</div></div>
-                <div style="width:26px;height:26px;border:1px solid #5353ea;border-radius:50%;display:flex;align-items:center;justify-content:center"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H3M8 2V7" stroke="#5353ea" stroke-width="1.2"/></svg></div>
-              </div>
-              <div class="phone-card" style="display:flex;align-items:center;gap:12px;padding:10px 14px;">
-                <div style="width:36px;height:36px;border-radius:50%;background:#f0e6ff;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="17" height="17" fill="none" viewBox="0 0 24 24"><path d="M16 11c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zm-8 0c1.7 0 3-1.3 3-3S9.7 5 8 5 5 6.3 5 8s1.3 3 3 3zm0 2c-2.3 0-7 1.2-7 3.5V19h14v-2.5C15 14.2 10.3 13 8 13zm8 0c-.3 0-.6 0-.9.1 1.1.8 1.9 1.9 1.9 3.4V19h6v-2.5c0-2.3-4.7-3.5-7-3.5z" fill="#5353ea"/></svg></div>
-                <div style="flex:1"><div class="phone-card-title">Aula em grupo</div><div class="phone-card-text">Participe das aulas em grupo</div></div>
-                <div style="width:26px;height:26px;border:1px solid #5353ea;border-radius:50%;display:flex;align-items:center;justify-content:center"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H3M8 2V7" stroke="#5353ea" stroke-width="1.2"/></svg></div>
+              <div class="wa-input">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#8696a0"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/></svg>
+                <div class="wa-inputbox">Mensagem</div>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#8696a0"><path d="M21.44 11.05l-9.19 9.19a5.64 5.64 0 01-7.98-7.98l9.19-9.19a3.76 3.76 0 015.32 5.32L9.6 17.57a1.88 1.88 0 01-2.66-2.66l8.38-8.38 1.06 1.06-8.38 8.38a.63.63 0 00.88.88l9.19-9.19a2.51 2.51 0 00-3.54-3.54l-9.19 9.19a3.76 3.76 0 005.32 5.32l9.19-9.19-1.41-1.41z"/></svg>
+                <div class="wa-mic"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm-1-9c0-.55.45-1 1-1s1 .45 1 1v6c0 .55-.45 1-1 1s-1-.45-1-1V5zm6 6c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/></svg></div>
               </div>
             </div>
           </div>
@@ -605,19 +648,35 @@
             <p>Você recebe variações da mesma estrutura em situações diferentes. Seu cérebro conecta o significado ao contexto, não a uma tradução decorada.</p>
           </div>
           <div class="step-mockup">
-            <div class="phone-mockup" style="text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:300px;padding:0px 20px 24px;">
-              <div style="margin-bottom:-14px;">
-                <img src="assets/img/logo-vertical.png" alt="Teacher Queen" style="height:140px;margin:0 auto;">
+            <div class="wa-mock">
+              <div class="wa-body">
+                <div class="wa-msg incoming">
+                  <div class="wa-text" style="font-weight:600;">Veja como a mesma estrutura muda:</div>
+                  <div class="wa-text" style="margin-top:4px;line-height:1.7;">&#127968; <em>"I'm <strong>used to</strong> waking up early."</em><br>&#9992;&#65039; <em>"I'm <strong>used to</strong> traveling alone."</em><br>&#128188; <em>"I'm <strong>used to</strong> working under pressure."</em></div>
+                  <div class="wa-meta"><span class="wa-time">09:15</span></div>
+                </div>
+                <div class="wa-msg incoming">
+                  <div class="wa-text">&#128161; Percebeu? O padrão <strong>"I'm used to + -ing"</strong> funciona em qualquer situação!</div>
+                  <div class="wa-meta"><span class="wa-time">09:15</span></div>
+                </div>
+                <div class="wa-msg incoming">
+                  <div class="wa-text">Agora sua vez! Complete: <strong>"I'm used to ___"</strong> &#128640;</div>
+                  <div class="wa-meta"><span class="wa-time">09:16</span></div>
+                </div>
+                <div class="wa-msg outgoing">
+                  <div class="wa-text">I'm used to studying at night &#127769;</div>
+                  <div class="wa-meta"><span class="wa-time">09:17</span><span class="wa-check">&#10004;&#10004;</span></div>
+                </div>
+                <div class="wa-msg incoming">
+                  <div class="wa-text">&#127775; <strong>Perfect!</strong> Frase natural e correta!</div>
+                  <div class="wa-meta"><span class="wa-time">09:17</span></div>
+                </div>
               </div>
-              <div style="font-size:13px;font-weight:600;color:#2d2d2d;margin-bottom:4px;margin-top:-8px;text-align:center;width:100%;">Você gostaria de conversar sobre</div>
-              <div style="font-size:13px;font-weight:600;color:#2d2d2d;margin-bottom:16px;margin-top:-3px;text-align:center;width:100%;">algum tópico específico? <span style="display:inline-block;width:10px;height:10px;background:#f45a4a;border-radius:50%;vertical-align:middle;"></span></div>
-              <div class="phone-tags" style="justify-content:center;margin-top:-3px;">
-                <span class="phone-tag active">Assuntos variados</span>
-                <span class="phone-tag">Cultura</span>
-                <span class="phone-tag">Tecnologia</span>
-                <span class="phone-tag">Filmes e séries</span>
-                <span class="phone-tag">Profissional</span>
-                <span class="phone-tag">Viagens</span>
+              <div class="wa-input">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#8696a0"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/></svg>
+                <div class="wa-inputbox">Mensagem</div>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#8696a0"><path d="M21.44 11.05l-9.19 9.19a5.64 5.64 0 01-7.98-7.98l9.19-9.19a3.76 3.76 0 015.32 5.32L9.6 17.57a1.88 1.88 0 01-2.66-2.66l8.38-8.38 1.06 1.06-8.38 8.38a.63.63 0 00.88.88l9.19-9.19a2.51 2.51 0 00-3.54-3.54l-9.19 9.19a3.76 3.76 0 005.32 5.32l9.19-9.19-1.41-1.41z"/></svg>
+                <div class="wa-mic"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm-1-9c0-.55.45-1 1-1s1 .45 1 1v6c0 .55-.45 1-1 1s-1-.45-1-1V5zm6 6c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/></svg></div>
               </div>
             </div>
           </div>
@@ -631,26 +690,40 @@
             <p>Você grava um áudio ou escreve sua resposta. A IA analisa sua pronúncia e gramática e te dá feedback imediato. Prática real, correção real.</p>
           </div>
           <div class="step-mockup">
-            <div class="phone-mockup">
-              <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
-                <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M10 2L5 7.5 10 13" stroke="#2d2d2d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <div style="flex:1;height:5px;background:#f2f2f7;border-radius:24px;overflow:hidden"><div style="width:12%;height:100%;background:#5353ea;border-radius:24px;"></div></div>
-              </div>
-              <div style="font-size:11px;font-weight:400;color:#2d2d2d;margin-bottom:14px;">O que você escuta?</div>
-              <div style="background:#f2f2f7;border:0.5px solid #e8e8e8;border-radius:12px;padding:10px;margin-bottom:14px;">
-                <div style="display:flex;gap:12px;align-items:center;justify-content:center;margin-bottom:10px;">
-                  <div style="width:38px;height:38px;border-radius:8px;background:#5353ea;display:flex;align-items:center;justify-content:center"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 5v4l4.5 3V2L2 5zm6 1v2" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-                  <div style="width:38px;height:38px;border-radius:8px;background:#5353ea;display:flex;align-items:center;justify-content:center"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M4 5v4M10 4v6M1 6v2M13 6v2" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+            <div class="wa-mock">
+              <div class="wa-body">
+                <!-- User sends audio -->
+                <div class="wa-msg outgoing">
+                  <div class="wa-voice">
+                    <div class="wa-v-play green"><svg width="10" height="12" viewBox="0 0 10 12" fill="none"><path d="M1 1v10l8-5-8-5z" fill="#fff"/></svg></div>
+                    <div class="wa-v-mid">
+                      <div class="wa-v-bars"><span style="height:3px;background:#53bdeb"></span><span style="height:7px;background:#53bdeb"></span><span style="height:13px;background:#53bdeb"></span><span style="height:18px;background:#53bdeb"></span><span style="height:10px;background:#53bdeb"></span><span style="height:5px;background:#53bdeb"></span><span style="height:15px;background:#53bdeb"></span><span style="height:20px;background:#53bdeb"></span><span style="height:12px;background:#53bdeb"></span><span style="height:6px;background:#53bdeb"></span><span style="height:16px;background:#53bdeb"></span><span style="height:9px;background:#53bdeb"></span><span style="height:19px;background:#53bdeb"></span><span style="height:14px;background:#53bdeb"></span><span style="height:7px;background:#53bdeb"></span><span style="height:3px;background:#53bdeb"></span><span style="height:11px;background:#53bdeb"></span><span style="height:17px;background:#53bdeb"></span><span style="height:8px;background:#53bdeb"></span><span style="height:4px;background:#53bdeb"></span><span style="height:13px;background:#53bdeb"></span><span style="height:6px;background:#53bdeb"></span><span style="height:3px;background:#53bdeb"></span></div>
+                      <div class="wa-v-seek"><div class="wa-v-fill" style="width:100%;background:#53bdeb;"></div><div class="wa-v-dot" style="left:calc(100% - 10px);background:#53bdeb;"></div></div>
+                    </div>
+                  </div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;"><span class="wa-v-dur">0:08</span><div class="wa-meta"><span class="wa-time">09:20</span><span class="wa-check">&#10004;&#10004;</span></div></div>
                 </div>
-                <div class="audio-bars" style="justify-content:center;gap:1.5px;padding:4px 0;">
-                  <div class="audio-bar" style="height:5px"></div><div class="audio-bar" style="height:5px"></div><div class="audio-bar" style="height:5px"></div><div class="audio-bar" style="height:7px"></div><div class="audio-bar" style="height:10px"></div><div class="audio-bar" style="height:12px"></div><div class="audio-bar" style="height:15px"></div><div class="audio-bar" style="height:15px"></div><div class="audio-bar" style="height:15px"></div><div class="audio-bar" style="height:10px"></div><div class="audio-bar" style="height:15px"></div><div class="audio-bar" style="height:13px"></div><div class="audio-bar" style="height:15px"></div><div class="audio-bar" style="height:15px"></div><div class="audio-bar" style="height:10px"></div><div class="audio-bar" style="height:15px"></div><div class="audio-bar" style="height:15px"></div><div class="audio-bar" style="height:15px"></div><div class="audio-bar" style="height:9px"></div><div class="audio-bar" style="height:15px"></div><div class="audio-bar" style="height:9px"></div><div class="audio-bar" style="height:15px"></div><div class="audio-bar" style="height:15px"></div><div class="audio-bar" style="height:15px"></div><div class="audio-bar" style="height:10px"></div><div class="audio-bar" style="height:9px"></div><div class="audio-bar" style="height:5px"></div><div class="audio-bar" style="height:5px"></div>
+                <!-- Queen: feedback -->
+                <div class="wa-msg incoming">
+                  <div class="wa-text">&#127775; <strong>Ótima pronúncia!</strong></div>
+                  <div class="wa-text" style="margin-top:2px;">Você disse: <em>"I usually wake up at seven"</em></div>
+                  <div class="wa-meta"><span class="wa-time">09:20</span></div>
+                </div>
+                <div class="wa-msg incoming">
+                  <div class="wa-text">&#128221; Pequeno ajuste: <span style="background:#fef3c7;padding:1px 4px;border-radius:3px;font-weight:500;">wake up</span> &#8594; foque no som do <strong>"w"</strong>, arredondando os lábios.</div>
+                  <div class="wa-meta"><span class="wa-time">09:20</span></div>
+                </div>
+                <div class="wa-msg incoming">
+                  <div class="wa-text">&#127919; Seu score: <strong style="color:#00a884;">92/100</strong></div>
+                  <div class="wa-text" style="margin-top:2px;">&#128170; Tente de novo para chegar a 100!</div>
+                  <div class="wa-meta"><span class="wa-time">09:21</span></div>
                 </div>
               </div>
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;">
-                <div class="phone-option">Option</div>
-                <div class="phone-option">Option</div>
-                <div class="phone-option">Option</div>
-                <div class="phone-option" style="background:#5353ea;color:#fff;border-color:#5353ea;font-weight:600;">Option</div>
+              <div class="wa-input">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#8696a0"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/></svg>
+                <div class="wa-inputbox">Mensagem</div>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#8696a0"><path d="M21.44 11.05l-9.19 9.19a5.64 5.64 0 01-7.98-7.98l9.19-9.19a3.76 3.76 0 015.32 5.32L9.6 17.57a1.88 1.88 0 01-2.66-2.66l8.38-8.38 1.06 1.06-8.38 8.38a.63.63 0 00.88.88l9.19-9.19a2.51 2.51 0 00-3.54-3.54l-9.19 9.19a3.76 3.76 0 005.32 5.32l9.19-9.19-1.41-1.41z"/></svg>
+                <div class="wa-mic"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm-1-9c0-.55.45-1 1-1s1 .45 1 1v6c0 .55-.45 1-1 1s-1-.45-1-1V5zm6 6c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/></svg></div>
               </div>
             </div>
           </div>
